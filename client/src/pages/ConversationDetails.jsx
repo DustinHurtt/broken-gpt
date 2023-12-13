@@ -47,16 +47,16 @@ const ConversationDetails = () => {
           console.log("response", result.choices[0].message.content);
 
     
+          let thisIndex
+          let thisQuery = conversation.queries.find((query, index) => {
+              thisIndex = index
+              return query.id === queryId
+          })
           setTimeout(() => {
             // setLoading(false);
-            let thisIndex
-            let thisQuery = conversation.queries.find((query, index) => {
-                thisIndex = index
-                return query.id === queryId
-            })
 
             let newQueries = [...conversation.queries]
-            newQueries[thisIndex] = {...thisQuery, ['question']: newQuery, ['response']: result.choices[0].message.content}
+            newQueries[thisIndex] = {...thisQuery, ['question']: newQuery, ['response']: result.choices[0].message.content, ['isEditing']: false}
             setConversation((prev) => ({...prev, ['queries']: newQueries}))
             
           }, 1500);
@@ -65,8 +65,14 @@ const ConversationDetails = () => {
             ...thisQuery,
             question: newQuery,
             response: result.choices[0].message.content,
-          });
-          setNewQuery("");
+          })
+          .then((response) => {
+            console.log(response.data)
+            setNewQuery("");
+          })
+          .catch((err) => {
+            console.log("Put ===>", err)
+          })
         } catch (e) {
           console.log("This is error", e);
         //   setPrompt("");
@@ -98,16 +104,16 @@ const ConversationDetails = () => {
         try {
 
         const gptResponse = await getQuote();
+        let thisIndex
+        let thisQuery = conversation.queries.find((query, index) => {
+            thisIndex = index
+            return query.id === queryId
+        })
           setTimeout(() => {
             // setLoading(false);
-            let thisIndex
-            let thisQuery = conversation.queries.find((query, index) => {
-                thisIndex = index
-                return query.id === queryId
-            })
 
             let newQueries = [...conversation.queries]
-            newQueries[thisIndex] = {...prev, ['question']: newQuery, ['response']: gptResponse[0].quote}
+            newQueries[thisIndex] = {...prev, ['question']: newQuery, ['response']: gptResponse[0].quote, ['isEditing']: false}
             setConversation((prev) => ({...prev, ['queries']: newQueries}))
             
           }, 1500);
@@ -118,9 +124,16 @@ const ConversationDetails = () => {
             ...thisQuery,
             question: newQuery,
             response: gptResponse[0].quote,
-          });
+          })
+          .then((response) => {
+            console.log(response.data)
+            setNewQuery("");
+          })
+          .catch((err) => {
+            console.log("Put ===>", err)
+          })
     
-          setNewQuery("");
+
         } catch (error) {
           console.log(error);
         }

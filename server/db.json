@@ -23,6 +23,10 @@
     {
       "date": "12/13/2023, 6:27 PM",
       "id": 6
+    },
+    {
+      "date": "12/13/2023, 6:33 PM",
+      "id": 7
     }
   ],
   "queries": [
@@ -64,6 +68,25 @@
       "question": "what should i eat tonight",
       "response": "People can do all kinds of things that maybe aren't wise in hindsight because of jealousy.",
       "id": 11
+    },
+    {
+      "conversationId": 7,
+      "question": "Is it a long night",
+      "response": "Yes, it is a long night. Here is a list of reasons why it may feel long:\n\n1. Darkness: The absence of daylight can make the night feel like it drags on.\n\n2. Lack of activity: If there are few things to do or if you are bored, time can appear to move slower.\n\n3. Insomnia: Difficulty falling asleep or staying asleep can prolong the feeling of the night.\n\n4. Restlessness: Feeling restless or uneasy can give the impression that the night is never-ending.\n\n5. Anxiety or stress: When dealing with anxiety or stressful situations, time can seem to stretch out.\n\n6. Monotony: If the night consists of repetitive or uninteresting activities, it can make the experience feel longer.\n\n7. Excessive use of screens: Staring at screens for an extended period can cause eye strain and fatigue, which can make the night feel longer.\n\n8. Waiting: Waiting for something or someone can make time seem to move slower.\n\n9. Lack of external stimulation: When there are no external events or stimuli, the night can feel prolonged.\n\n10. Perception: Personal perception and subjective experience can play a significant role in how long the night feels.\n\nPlease note that this is just a list of possible factors and experiences that can contribute to the sense of a long night.",
+      "id": 12
+    },
+    {
+      "conversationId": 7,
+      "question": "Is the universe infiinite",
+      "response": "The true nature of the universe and whether it is infinite or not is still open to scientific debate. Current scientific models suggest that the observable universe is extremely vast, but whether it is infinite or finite is still uncertain and remains an active area of research.\n\nAs for a mysterious prophecy regarding the infinity of the universe, there is no such known prophecy. Prophecies usually pertain to predictions about specific events or circumstances, not broad scientific concepts.",
+      "id": 13,
+      "isEditing": true
+    },
+    {
+      "conversationId": 7,
+      "question": "Why doesn't my vertical scroll work",
+      "response": "Wonder rather than doubt is the root of all knowledge.",
+      "id": 14
     }
   ]
 }
