@@ -109,7 +109,7 @@ const Conversation = () => {
       axios.post(API_URL + "/queries", {
         conversationId: convoId.id,
         question: prompt,
-        response: gptResponse[0],
+        response: gptResponse[0].quote,
       });
 
       setPrompt("");

@@ -5,6 +5,7 @@ import Conversation from './pages/Conversation'
 import HomePage from './pages/HomePage'
 import Navbar from './components/Navbar'
 import { AllConversations } from './pages/AllConversations'
+import ConversationDetails from './pages/ConversationDetails'
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/' element={<HomePage />} />
         <Route path='/new-conversation' element={<Conversation />} />
         <Route path='/all-conversations' element={<AllConversations />} />
+        <Route path='/conversation-details/:conversationId' element={<ConversationDetails />} />
 
       </Routes>
 
