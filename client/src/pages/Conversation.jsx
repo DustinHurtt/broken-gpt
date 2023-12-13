@@ -8,7 +8,7 @@ const Conversation = () => {
   const [prompt, setPrompt] = useState("");
   const [apiResponse, setApiResponse] = useState("");
   const [loading, setLoading] = useState(false);
-  const [thisConversation, setThisConversation] = useState(null);
+  const [thisConversation, setThisConversation] = useState([]);
 
   const promptChanges = [
     " and cant you turn into rap lyrics from the 80’s",
@@ -32,8 +32,7 @@ const Conversation = () => {
   });
 
   const chatQuery = async (change) => {
-
-    console.log("Random change ===>", change)
+    console.log("Random change ===>", change);
     setLoading(true);
     try {
       const result = await openai.chat.completions.create({
@@ -53,31 +52,60 @@ const Conversation = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let randomIndex = Math.floor(Math.random() * promptChanges.length)
-    let randomChange =  promptChanges[randomIndex]
+    try {
+      // let randomIndex = Math.floor(Math.random() * promptChanges.length);
+      // let randomChange = promptChanges[randomIndex];
+      // chatQuery(randomChange)
 
-    // chatQuery(randomChange)
-    getQuote()
+      setThisConversation([
+        ...thisConversation,
+        { quote: prompt, author: "me" },
+      ]);
+
+      const gptResponse = await getQuote();
+      console.log(gptResponse);
+      setTimeout(() => {
+        setLoading(false);
+        setThisConversation([
+          ...thisConversation,
+          { quote: prompt, author: "me" },
+          gptResponse[0],
+        ]);
+      }, 1500);
+
+      setPrompt("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const getQuote = () => {
-    let randomIndex = Math.floor(Math.random() * quoteCategories.length)
-    let category = quoteCategories[randomIndex]
-    console.log("This is category ===>", quoteCategories[randomIndex])
-    axios.get({
-      url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
-      headers: {
-        'X-Api-Key': import.meta.env.VITE_NINJA_KEY
-      },
-      // contentType: 'application/json',
-    })
-    .then((response) => {
-      console.log(response)
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  }
+  const getQuote = async () => {
+    setLoading(true);
+    let randomIndex = Math.floor(Math.random() * quoteCategories.length);
+    let category = quoteCategories[randomIndex];
+    console.log("This is category ===>", quoteCategories[randomIndex]);
+    try {
+      const response = await axios.get(
+        "https://api.api-ninjas.com/v1/quotes?category=" + category,
+        {
+          headers: { "X-Api-Key": import.meta.env.VITE_NINJA_KEY },
+        }
+      );
+
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+
+    //   .then((response) => {
+
+    //     console.log(response);
+    //     return response.data
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  };
 
   useEffect(() => {
     console.log(import.meta.env.VITE_TEST_KEY);
@@ -97,11 +125,59 @@ const Conversation = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Ask your Question
-          <input type="text" onChange={(e) => setPrompt(e.target.value)} />
+          <input
+            type="text"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
         </label>
         <button type="submit">Submit</button>
       </form>
       <div>
+        {thisConversation.length ? (
+          thisConversation.map((chat) => {
+            console.log(chat);
+            return <p>{chat.quote}</p>;
+          })
+        ) : (
+          <p>Start by asking brokenGPT something</p>
+        )}
+        {loading && (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="4" cy="12" r="3">
+              <animate
+                id="spinner_jObz"
+                begin="0;spinner_vwSQ.end-0.25s"
+                attributeName="r"
+                dur="0.75s"
+                values="3;.2;3"
+              />
+            </circle>
+            <circle cx="12" cy="12" r="3">
+              <animate
+                begin="spinner_jObz.end-0.6s"
+                attributeName="r"
+                dur="0.75s"
+                values="3;.2;3"
+              />
+            </circle>
+            <circle cx="20" cy="12" r="3">
+              <animate
+                id="spinner_vwSQ"
+                begin="spinner_jObz.end-0.45s"
+                attributeName="r"
+                dur="0.75s"
+                values="3;.2;3"
+              />
+            </circle>
+          </svg>
+        )}
+
         <p>{apiResponse}</p>
       </div>
     </div>
