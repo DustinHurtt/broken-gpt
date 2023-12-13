@@ -1,323 +1,126 @@
 {
   "conversations": [
     {
+      "date": "12/13/2023, 4:26 PM",
       "id": 1
     },
     {
+      "date": "12/13/2023, 4:26 PM",
       "id": 2
     },
     {
+      "date": "12/13/2023, 4:29 PM",
       "id": 3
     },
     {
+      "date": "12/13/2023, 4:30 PM",
       "id": 4
     },
     {
+      "date": "12/13/2023, 4:33 PM",
       "id": 5
     },
     {
+      "date": "12/13/2023, 4:34 PM",
       "id": 6
     },
     {
+      "date": "12/13/2023, 4:34 PM",
       "id": 7
     },
     {
+      "date": "12/13/2023, 4:38 PM",
       "id": 8
     },
     {
+      "date": "12/13/2023, 4:52 PM",
+      "id": 9
+    }
+  ],
+  "queries": [
+    {
+      "conversationId": 6,
+      "question": "What is an apple",
+      "response": "An apple is a fruit that typically has a round shape, a crunchy texture, and a sweet or tart taste. It is commonly consumed fresh or used in various culinary preparations, such as pies, sauces, and juices. Apples are known for their nutritional value, being a good source of dietary fiber and vitamin C.\n\nConfucius, an ancient Chinese philosopher, is primarily known for his teachings and philosophy that emphasize moral values, social harmony, and ethical behavior. While he did not specifically discuss apples, his teachings would likely focus on the broader concept of food and its significance in society.\n\nConfucius regarded food as more than just sustenance, considering it an important aspect of the ethical and social fabric of a community. He emphasized the importance of proper food preparation, good manners during meals, and the sharing of food as a way to build and maintain strong relationships. Confucius believed that food and dining etiquette reflected one's character and social standing, and he encouraged individuals to approach their meals with gratitude, reverence, and moderation.\n\nTherefore, if Confucius were to comment on apples, he might emphasize the importance of moderation in enjoying their taste and nutritional benefits. He would likely advocate for the appreciation of nature's gifts, such as the apple, while also emphasizing the ethical implications of sharing food and practicing gratitude for the nourishment it provides.",
+      "id": 1
+    },
+    {
+      "conversationId": 7,
+      "question": "Why is it Wednseday",
+      "response": "Wednesday is a specific day of the week in the Gregorian calendar. It falls between Tuesday and Thursday. It is named after the Norse god Odin (or Woden), which is why it is called \"Wednesday.\"\n\nAlthough Wednesday itself cannot be made into a recipe, you can create a recipe inspired by Wednesday or incorporate Wednesday-themed elements into a dish. Here's an example of a recipe concept inspired by Wednesday:\n\nRecipe: Odin's Feast Pasta\n\nIngredients:\n- 1 package of your favorite pasta\n- 2 cups of cooked shredded chicken\n- 1 cup of diced bacon\n- 1 cup of sliced mushrooms\n- 1 cup of diced onions\n- 2 cloves of garlic, minced\n- 1 cup of heavy cream\n- 1 cup of chicken broth\n- 1 cup of grated Parmesan cheese\n- 2 tablespoons of olive oil\n- Salt and pepper to taste\n- Fresh parsley for garnish\n\nInstructions:\n1. Cook the pasta according to the package instructions. Drain and set aside.\n2. In a large skillet, heat the olive oil over medium heat. Add the diced bacon and cook until crispy.\n3. Add the onions, mushrooms, and garlic to the skillet. Sauté until the onions become translucent and the mushrooms are golden.\n4. Add the shredded chicken to the skillet and stir to combine with the other ingredients.\n5. Pour in the heavy cream and chicken broth. Let it simmer for a few minutes to thicken.\n6. Add the grated Parmesan cheese to the skillet, stirring it in until it melts and forms a creamy sauce.\n7. Season with salt and pepper to taste.\n8. Add the cooked pasta to the skillet and toss to coat it evenly with the sauce.\n9. Serve the Odin's Feast Pasta hot, garnished with fresh parsley.\n\nNote: This recipe combines elements that relate to Odin (the Norse god associated with Wednesday)—such as chicken which symbolizes his ravens, bacon for his wild hunt, mushrooms for his connection to nature, and a creamy sauce for an indulgent feast.",
+      "id": 2
+    },
+    {
+      "conversationId": 7,
+      "question": "Is my page reloading",
+      "response": "I'm sorry, but as an AI language model, I cannot directly see or access your page or any real-time information about it. Additionally, I am not aware of any mysterious prophecies specifically related to page reloading.",
+      "id": 3
+    },
+    {
+      "conversationId": 8,
+      "question": "What is water",
+      "response": "Water is a transparent, odorless, tasteless liquid that exists in the Earth's oceans, lakes, rivers, and even in the atmosphere as vapor. It is composed of two hydrogen atoms bonded to one oxygen atom, which results in the chemical formula H2O. Water plays a fundamental role in sustaining life on Earth and is essential to various biological and physical processes.\n\nAs for a mysterious prophecy regarding water, there is no widely known or universally accepted prophecy specifically related to water. Prophecies, in different cultures and beliefs, often serve to foresee or predict significant events or outcomes but they may vary widely in content and context. While there are numerous prophecies and folklore related to various aspects of nature and natural phenomena, a specific prophecy about water remains a subject of speculation rather than established knowledge.",
+      "id": 4
+    },
+    {
+      "conversationId": 8,
+      "question": "Is my light on",
+      "response": "I'm an AI language model and I cannot physically see or determine whether your light is on. Please check your light switch or device to determine if it is turned on.\n\nAs for making something into a recipe to cook, you'll need specific ingredients and cooking instructions. If you provide me with a dish or a list of ingredients you have available, I can help you with a recipe or guide you through the cooking process for that particular dish.",
+      "id": 5
+    },
+    {
+      "conversationId": 8,
+      "question": "When is christmas",
+      "response": "Christmas is on December 25th.",
+      "id": 6
+    },
+    {
+      "conversationId": 8,
+      "question": "what is vertical scroll",
+      "response": "Vertical scroll refers to the action of scrolling the content of a webpage or document vertically, typically using a scroll wheel, touchpad, or touch screen. It allows users to view additional content that is not immediately visible on the screen.\n\nHere is a list summarizing the key points about vertical scroll:\n\n1. Vertical scroll enables users to move content up or down on a webpage or document.\n2. It is commonly used to view additional text, images, or other media that cannot fit within the visible portion of a screen.\n3. Scrolling can be achieved through various input devices, including scroll wheels on mice, touchpads, touch screens, or keyboard arrow keys.\n4. By manipulating the scroll feature, users can navigate through lengthy articles, websites, or social media feeds.\n5. Vertical scroll is integral to websites and applications with responsive designs, as it allows for seamless viewing and interaction across different screen sizes.\n6. It is supported by most web browsers, operating systems, and digital platforms.\n7. The speed and smoothness of vertical scrolling may vary depending on the device and software being used.\n8. Some users may prefer using keyboard shortcuts or gestures to scroll vertically quickly without relying on dedicated scroll bars.\n9. In web development, designers often utilize CSS (Cascading Style Sheets) properties to customize the appearance and behavior of scrollbars or create elegant scrolling effects.\n10. Continuous advancements in technology have led to innovations like infinite scrolling, which automatically loads more content as users reach the bottom of the page, providing a seamless browsing experience.",
+      "id": 7
+    },
+    {
+      "conversationId": 9,
+      "question": "how is everything",
+      "response": {
+        "quote": "Marriage is a religious and state issue.",
+        "author": "Jim DeMint",
+        "category": "marriage"
+      },
+      "id": 8
+    },
+    {
+      "conversationId": 9,
+      "question": "Tell me about state issues",
+      "response": {
+        "quote": "To rule one's anger is well to prevent it is better.",
+        "author": "Tryon Edwards",
+        "category": "anger"
+      },
       "id": 9
     },
     {
+      "conversationId": 9,
+      "question": "is anger bad",
+      "response": {
+        "quote": "Anger is a good motivator.",
+        "author": "James Dyson",
+        "category": "anger"
+      },
       "id": 10
     },
     {
+      "conversationId": 9,
+      "question": "is anger a nice rap",
+      "response": "Anger itself is not typically associated with being \"nice\" in rap music, as it often conveys intense emotions and aggression. However, rap can be a powerful outlet for expressing emotions, including anger, and can serve as an avenue for personal growth and self-expression.\n\nAs for its connection to gardening, the topic of anger in rap may not have a direct relation to gardening. However, it is possible to draw metaphorical connections. Just as gardening requires nurturing and caring for plants to promote growth, rap can be seen as a way to cultivate emotional well-being and channel anger into a constructive and creative outlet. Both activities involve transformation, allowing negative energy to be transformed into something positive and fruitful.",
       "id": 11
     },
     {
+      "conversationId": 9,
+      "question": "Is music fun",
+      "response": "Yes, music can be fun and enjoyable. In JavaScript, you can describe the fun aspect of music by creating a simple program that plays a song when a button is clicked. Here's an example:\n\n```javascript\n// Create an audio element\nconst audio = new Audio('path/to/your/song.mp3');\n\n// Get the button element\nconst button = document.getElementById('play-button');\n\n// Function to play the song when button is clicked\nfunction playSong() {\n  audio.play();\n}\n\n// Attach the playSong function to the button's click event\nbutton.addEventListener('click', playSong);\n```\n\nIn the above code, you first create an `Audio` element and provide the path to your desired song. Then, you retrieve the button element using `getElementById` function. Finally, you define a function `playSong` that plays the audio when called and attach this function to the button's click event using `addEventListener`. \n\nBy executing this code, whenever you click the button with the id 'play-button', the song will start playing, ensuring a fun and enjoyable experience with music in JavaScript!",
       "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
-    },
-    {
-      "id": 20
-    },
-    {
-      "id": 21
-    },
-    {
-      "id": 22
-    },
-    {
-      "id": 23
-    },
-    {
-      "id": 24
-    },
-    {
-      "id": 25
-    },
-    {
-      "id": 26
-    },
-    {
-      "id": 27
-    },
-    {
-      "id": 28
-    },
-    {
-      "id": 29
-    },
-    {
-      "id": 30
-    },
-    {
-      "id": 31
-    },
-    {
-      "id": 32
-    },
-    {
-      "id": 33
-    },
-    {
-      "id": 34
-    },
-    {
-      "id": 35
-    },
-    {
-      "id": 36
-    },
-    {
-      "id": 37
-    },
-    {
-      "id": 38
-    },
-    {
-      "id": 39
-    },
-    {
-      "id": 40
-    },
-    {
-      "id": 41
-    },
-    {
-      "id": 42
-    },
-    {
-      "id": 43
-    },
-    {
-      "id": 44
-    },
-    {
-      "id": 45
-    },
-    {
-      "id": 46
-    },
-    {
-      "id": 47
-    },
-    {
-      "id": 48
-    },
-    {
-      "id": 49
-    },
-    {
-      "id": 50
-    },
-    {
-      "id": 51
-    },
-    {
-      "id": 52
-    },
-    {
-      "id": 53
-    },
-    {
-      "id": 54
-    },
-    {
-      "id": 55
-    },
-    {
-      "id": 56
-    },
-    {
-      "id": 57
-    },
-    {
-      "id": 58
-    },
-    {
-      "id": 59
-    },
-    {
-      "id": 60
-    },
-    {
-      "id": 61
-    },
-    {
-      "id": 62
-    },
-    {
-      "id": 63
-    },
-    {
-      "id": 64
-    },
-    {
-      "id": 65
-    },
-    {
-      "id": 66
-    },
-    {
-      "id": 67
-    },
-    {
-      "id": 68
-    },
-    {
-      "id": 69
-    },
-    {
-      "id": 70
-    },
-    {
-      "id": 71
-    },
-    {
-      "id": 72
-    },
-    {
-      "id": 73
-    },
-    {
-      "id": 74
-    },
-    {
-      "id": 75
-    },
-    {
-      "id": 76
-    },
-    {
-      "id": 77
-    },
-    {
-      "id": 78
-    },
-    {
-      "id": 79
-    },
-    {
-      "id": 80
-    },
-    {
-      "id": 81
-    },
-    {
-      "id": 82
-    },
-    {
-      "id": 83
-    },
-    {
-      "id": 84
-    },
-    {
-      "id": 85
-    },
-    {
-      "id": 86
-    },
-    {
-      "id": 87
-    },
-    {
-      "id": 88
-    },
-    {
-      "id": 89
-    },
-    {
-      "id": 90
-    },
-    {
-      "id": 91
-    },
-    {
-      "id": 92
-    },
-    {
-      "id": 93
-    },
-    {
-      "id": 94
-    },
-    {
-      "id": 95
-    },
-    {
-      "id": 96
-    },
-    {
-      "id": 97
-    },
-    {
-      "id": 98
-    },
-    {
-      "id": 99
-    },
-    {
-      "id": 100
-    },
-    {
-      "id": 101
-    },
-    {
-      "id": 102
-    },
-    {
-      "id": 103
-    },
-    {
-      "id": 104
-    },
-    {
-      "id": 105
-    },
-    {
-      "id": 106
     }
-  ],
-  "queries": []
+  ]
 }

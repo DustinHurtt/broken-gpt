@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { API_URL } from "../services/API_URL";
+import { returnReadableTimeShort } from "../services/time";
 import axios from "axios";
 
 import OpenAI from "openai";
@@ -9,15 +10,16 @@ const Conversation = () => {
   const [apiResponse, setApiResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const [thisConversation, setThisConversation] = useState([]);
+  const [convoId, setConvoId] = useState(null);
 
   const promptChanges = [
-    " and cant you turn into rap lyrics from the 80’s",
+    " and can you turn into rap lyrics from the 80’s",
     " and can you describe this in javascript?",
     " and can you make this a limerick?",
     " and how does this pertain to gardening?",
     " and how can I make this into a recipe to cook?",
     " and how can I clean my house with this? ",
-    " and what would Confucius say about?",
+    " and what would Confucius say about it?",
     " and is there a mysterious a prophecy regarding this?",
     " and how should I should I properly eat pizza?",
     " and make this answer a list?",
@@ -41,9 +43,32 @@ const Conversation = () => {
       });
       console.log("response", result.choices[0].message.content);
       setApiResponse(result.choices[0].message.content);
+
+      setThisConversation([
+        ...thisConversation,
+        { quote: prompt, author: "me" },
+      ]);
+
+      setTimeout(() => {
+        setLoading(false);
+        setThisConversation([
+          ...thisConversation,
+          { quote: prompt, author: "me" },
+          {
+            quote: result.choices[0].message.content,
+            author: "gpt",
+          },
+        ]);
+      }, 1500);
+      console.log("Convo id", convoId);
+      axios.post(API_URL + "/queries", {
+        conversationId: convoId.id,
+        question: prompt,
+        response: result.choices[0].message.content,
+      });
       setPrompt("");
     } catch (e) {
-      console.log(e);
+      console.log("This is error", e);
       setPrompt("");
       setApiResponse("Something is going wrong, Please try again.");
     }
@@ -52,11 +77,17 @@ const Conversation = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      // let randomIndex = Math.floor(Math.random() * promptChanges.length);
-      // let randomChange = promptChanges[randomIndex];
-      // chatQuery(randomChange)
+    if (Math.random() > 0.79) {
+      getQuoteSubmit();
+    } else {
+      let change =
+        promptChanges[Math.floor(Math.random() * promptChanges.length)];
+      chatQuery(change);
+    }
+  };
 
+  const getQuoteSubmit = async () => {
+    try {
       setThisConversation([
         ...thisConversation,
         { quote: prompt, author: "me" },
@@ -72,6 +103,14 @@ const Conversation = () => {
           gptResponse[0],
         ]);
       }, 1500);
+
+      console.log("Convo id", convoId);
+
+      axios.post(API_URL + "/queries", {
+        conversationId: convoId.id,
+        question: prompt,
+        response: gptResponse[0],
+      });
 
       setPrompt("");
     } catch (error) {
@@ -96,24 +135,26 @@ const Conversation = () => {
     } catch (error) {
       console.log(error);
     }
+  };
 
-    //   .then((response) => {
-
-    //     console.log(response);
-    //     return response.data
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
+  const handlePrompt = (e) => {
+    let str = e.target.value.replace(/[?=]/g, "");
+    console.log(e.target.value.replace(/[?=]/g, ""));
+    setPrompt(str);
   };
 
   useEffect(() => {
     console.log(import.meta.env.VITE_TEST_KEY);
+    let timestamp = Date.now();
+    let date = new Date(timestamp);
+
     axios
-      .post(API_URL + "/conversations")
+      .post(API_URL + "/conversations", {
+        date: returnReadableTimeShort(date.toISOString())
+      })
       .then((response) => {
         console.log("Repsonse ===>", response.data);
-        setThisConversation(response.data);
+        setConvoId(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -121,27 +162,26 @@ const Conversation = () => {
   }, []);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Ask your Question
-          <input
-            type="text"
-            value={prompt}
-            onChange={(e) => setPrompt(e.target.value)}
-          />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-      <div>
+    <div className="convo-page">
+      <div className="chat">
         {thisConversation.length ? (
           thisConversation.map((chat) => {
             console.log(chat);
-            return <p>{chat.quote}</p>;
+            return (
+              <p
+                className={
+                  chat.author === "me" ? "right chat-box" : "left chat-box"
+                }
+              >
+                {chat.quote}
+              </p>
+            );
           })
         ) : (
-          <p>Start by asking brokenGPT something</p>
+          <p>Start by asking ChatGPT 5.0, the bestest, a question...</p>
         )}
+      </div>
+      <form className="form" onSubmit={handleSubmit}>
         {loading && (
           <svg
             width="24"
@@ -177,9 +217,17 @@ const Conversation = () => {
             </circle>
           </svg>
         )}
-
-        <p>{apiResponse}</p>
-      </div>
+        <label>
+          Ask your Question
+          <input
+            className="message-input"
+            type="text"
+            value={prompt}
+            onChange={handlePrompt}
+          />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
